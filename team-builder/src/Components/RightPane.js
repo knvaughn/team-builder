@@ -9,7 +9,7 @@ const RightPaneWrapper = styled.div`
 
     h1 {
         color: #1b3a67;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     .text-muted {
@@ -28,7 +28,7 @@ function RightPane(props) {
     return (
         <RightPaneWrapper>
             <h1>Team Members</h1>
-            <p class="text-muted">{teamMembers.length} Members</p>
+            <p class="text-muted">{teamMembers.length} Member{(teamMembers.length > 1 && 's')}</p>
             <div className="team-member-list">
                 {
                 teamMembers.map((teamMember) => {
