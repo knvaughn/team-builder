@@ -59,6 +59,11 @@ const FormWrapper = styled.div`
         background: #fff;
         color: #f08e9b;
     }
+
+    @media screen and (max-width: 800px) {
+        max-width: 100%;
+        padding: 0;
+    }
 `;
 
 function Form(props) {

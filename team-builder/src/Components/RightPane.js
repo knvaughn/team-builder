@@ -21,6 +21,10 @@ const RightPaneWrapper = styled.div`
         display: flex;
         flex-flow: column nowrap;
     }
+
+    @media screen and (max-width: 1024px) {
+        padding: 50px 30px;
+    }
 `;
 
 function RightPane(props) {

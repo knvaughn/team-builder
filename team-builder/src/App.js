@@ -8,6 +8,10 @@ import RightPane from './Components/RightPane';
 const Wrapper = styled.div`
   display: flex;
   min-height: 100vh;
+
+  @media screen and (max-width: 1024px) {
+    flex-flow: column nowrap;
+  }
 `;
 
 const initialForm = {
