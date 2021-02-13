@@ -48,10 +48,16 @@ const TeamMemberCard = styled.div`
 `;
 
 function TeamMember(props) {
-    const { teamMember } = props;
+    const { teamMember, memberToEdit, setMemberToEdit, editMember } = props;
     return (
         <TeamMemberCard>
-            <button className="edit-button"><i className="fas fa-user-edit"></i> Edit</button>
+            <button 
+                className="edit-button"
+                onClick={() => {setMemberToEdit(teamMember)}}
+            >
+                <i className="fas fa-user-edit"></i> 
+                Edit
+            </button>
             <h3>{teamMember.name}</h3>
             <p className="role">{teamMember.role}</p>
             <p className="details">Email: {teamMember.email}</p>

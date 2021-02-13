@@ -16,16 +16,39 @@ const Wrapper = styled.div`
 
 function App() {
   const [teamMembers, setTeamMembers] = useState([]);
+  const [memberToEdit, setMemberToEdit] = useState(null);
 
   useEffect(() => {
     axios.get('mydata.com')
     .then(response => setTeamMembers(response.data));
   }, []);
 
+  const editMember = (teamMember) => {
+    setTeamMembers(teamMembers.map((member) => {
+      if (member.id === teamMember.id) {
+        return {...teamMember};
+      } else {
+        return member;
+      }
+    }));
+    setMemberToEdit(null);
+  }
+
   return (
     <Wrapper>
-      <LeftPane teamMembers={teamMembers} setTeamMembers={setTeamMembers} />
-      <RightPane teamMembers={teamMembers} />
+      <LeftPane 
+        teamMembers={teamMembers} 
+        setTeamMembers={setTeamMembers} 
+        memberToEdit={memberToEdit} 
+        setMemberToEdit={setMemberToEdit}
+        editMember={editMember}
+      />
+      <RightPane 
+        teamMembers={teamMembers} 
+        memberToEdit={memberToEdit} 
+        setMemberToEdit={setMemberToEdit} 
+        editMember={editMember} 
+      />
     </Wrapper>
   );
 }

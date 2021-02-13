@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from '../axios';
 
@@ -75,17 +75,29 @@ const initialForm = {
 }
 
 function Form(props) {
-    const { teamMembers, setTeamMembers } = props;
+    const { teamMembers, setTeamMembers, memberToEdit, setMemberToEdit, editMember } = props;
     const [form, setForm] = useState(initialForm);
+
+    useEffect(() => {
+        if (!memberToEdit) {
+            setForm(initialForm);
+        } else {
+            setForm({...memberToEdit});
+        }
+    }, [memberToEdit]);
 
     const update = (name, value) => {
         setForm({...form, [name]: value});
     }
 
     const submit = () => {
-        axios.post('mydata.com', form)
-        .then(response => setTeamMembers([...teamMembers, response.data]));
-        setForm(initialForm);
+        if (memberToEdit) {
+            editMember(form);
+        } else {
+            axios.post('mydata.com', form)
+            .then(response => setTeamMembers([...teamMembers, response.data]));
+            setForm(initialForm);
+        }
     }
 
     const handleChange = (event) => {
