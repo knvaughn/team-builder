@@ -13,14 +13,13 @@ const LeftPaneWrapper = styled.div`
 `;
 
 function LeftPane(props) {
-    const { teamMembers, setTeamMembers, memberToEdit, setMemberToEdit, editMember } = props;
+    const { teamMembers, setTeamMembers, memberToEdit, editMember } = props;
     return (
         <LeftPaneWrapper>
             <Form 
                 teamMembers={teamMembers} 
                 setTeamMembers={setTeamMembers} 
                 memberToEdit={memberToEdit} 
-                setMemberToEdit={setMemberToEdit}
                 editMember={editMember}
             />
         </LeftPaneWrapper>

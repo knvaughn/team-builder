@@ -75,7 +75,7 @@ const initialForm = {
 }
 
 function Form(props) {
-    const { teamMembers, setTeamMembers, memberToEdit, setMemberToEdit, editMember } = props;
+    const { teamMembers, setTeamMembers, memberToEdit, editMember } = props;
     const [form, setForm] = useState(initialForm);
 
     useEffect(() => {

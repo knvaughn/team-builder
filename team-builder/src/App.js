@@ -40,7 +40,6 @@ function App() {
         teamMembers={teamMembers} 
         setTeamMembers={setTeamMembers} 
         memberToEdit={memberToEdit} 
-        setMemberToEdit={setMemberToEdit}
         editMember={editMember}
       />
       <RightPane 
