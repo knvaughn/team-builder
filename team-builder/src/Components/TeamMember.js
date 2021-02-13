@@ -29,8 +29,8 @@ function TeamMember(props) {
     return (
         <TeamMemberCard>
             <h3>{teamMember.name}</h3>
-            <p class="role">{teamMember.role}</p>
-            <p class="details">Email: {teamMember.email}</p>
+            <p className="role">{teamMember.role}</p>
+            <p className="details">Email: {teamMember.email}</p>
         </TeamMemberCard>
     )
 }

@@ -61,26 +61,47 @@ const FormWrapper = styled.div`
     }
 `;
 
-const handleSubmit = (event) => {
-    event.preventDefault();
-}
+function Form(props) {
+    const { form, update, submit } = props;
 
-function Form() {
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        update(name, value);
+    }
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        submit();
+    }
     return (
         <FormWrapper>
             <h1>Form</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Name 
-                    <input type="text" />
+                    <input 
+                        type="text" 
+                        name="name"
+                        onChange={handleChange}
+                        value={form.name}
+                    />
                 </label>
                 <label>
                     Email 
-                    <input type="email" />
+                    <input 
+                        type="email"
+                        name="email"
+                        onChange={handleChange}
+                        value={form.email}
+                    />
                 </label>
                 <label>
                     Role 
-                    <select>
+                    <select
+                        name="role"
+                        onChange={handleChange}
+                        value={form.role}
+                    >
                         <option>Select a role</option>
                         <option>Software Engineer</option>
                         <option>Backend Engineer</option>

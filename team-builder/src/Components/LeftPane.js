@@ -8,10 +8,11 @@ const LeftPaneWrapper = styled.div`
     padding: 100px 80px;
 `;
 
-function LeftPane() {
+function LeftPane(props) {
+    const { form, update, submit } = props;
     return (
         <LeftPaneWrapper>
-            <Form />
+            <Form form={form} update={update} submit={submit} />
         </LeftPaneWrapper>
     )
 }

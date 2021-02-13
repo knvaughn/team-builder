@@ -28,14 +28,14 @@ function RightPane(props) {
     return (
         <RightPaneWrapper>
             <h1>Team Members</h1>
-            <p class="text-muted">{teamMembers.length} Member{(teamMembers.length > 1 && 's')}</p>
+            <p className="text-muted">{teamMembers.length} Member{(teamMembers.length > 1 && 's')}</p>
             <div className="team-member-list">
                 {
-                teamMembers.map((teamMember) => {
-                    return (
-                    <TeamMember teamMember={teamMember} key={teamMember.id} />
-                    )
-                })
+                    teamMembers.map((teamMember) => {
+                        return (
+                            <TeamMember teamMember={teamMember} key={teamMember.id} />
+                        )
+                    })
                 }
             </div>
         </RightPaneWrapper>
