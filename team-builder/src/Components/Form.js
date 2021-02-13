@@ -102,6 +102,9 @@ function Form(props) {
 
     const handleChange = (event) => {
         const {name, value} = event.target;
+        if (name === 'name' && !/^[a-zA-Z\s]*$/.test(value)) {
+            return;
+        }
         update(name, value);
     }
     
