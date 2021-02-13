@@ -18,10 +18,10 @@ const FormWrapper = styled.div`
         font-weight: bold;
         letter-spacing: 2px;
         transition: all .2s linear;
-    }
 
-    label:focus-within {
-        color: #fff;
+        &:focus-within {
+            color: #fff;
+        }
     }
 
     input, select, button {
@@ -53,12 +53,12 @@ const FormWrapper = styled.div`
         transition: all .2s linear;
         font-weight: bold;
         letter-spacing: 1px;
-    }
 
-    button:hover {
-        cursor: pointer;
-        background: #fff;
-        color: #f08e9b;
+        &:hover {
+            cursor: pointer;
+            background: #fff;
+            color: #f08e9b;
+        }
     }
 
     @media screen and (max-width: 800px) {
