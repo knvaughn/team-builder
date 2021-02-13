@@ -21,6 +21,7 @@ const TeamMemberCard = styled.div`
 
         i {
             font-size: 1.2rem;
+            margin-right: 5px;
         }
 
         &:hover {
@@ -45,10 +46,16 @@ const TeamMemberCard = styled.div`
         color: #1b3a67;
         font-weight: 600;
     }
+
+    @media screen and (max-width: 800px) {
+        h3 {
+            margin-top: 60px;
+        }
+    }
 `;
 
 function TeamMember(props) {
-    const { teamMember, memberToEdit, setMemberToEdit, editMember } = props;
+    const { teamMember, setMemberToEdit } = props;
     return (
         <TeamMemberCard>
             <button 

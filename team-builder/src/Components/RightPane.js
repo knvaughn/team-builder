@@ -28,7 +28,7 @@ const RightPaneWrapper = styled.div`
 `;
 
 function RightPane(props) {
-    const { teamMembers, memberToEdit, setMemberToEdit, editMember } = props;
+    const { teamMembers, setMemberToEdit } = props;
     return (
         <RightPaneWrapper>
             <h1>Team Members</h1>
@@ -39,10 +39,8 @@ function RightPane(props) {
                         return (
                             <TeamMember 
                                 teamMember={teamMember} 
-                                memberToEdit={memberToEdit} 
                                 setMemberToEdit={setMemberToEdit} 
                                 key={teamMember.id} 
-                                editMember={editMember}
                             />
                         )
                     })

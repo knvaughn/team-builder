@@ -44,9 +44,7 @@ function App() {
       />
       <RightPane 
         teamMembers={teamMembers} 
-        memberToEdit={memberToEdit} 
         setMemberToEdit={setMemberToEdit} 
-        editMember={editMember} 
       />
     </Wrapper>
   );

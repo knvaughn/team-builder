@@ -120,6 +120,7 @@ function Form(props) {
                         name="name"
                         onChange={handleChange}
                         value={form.name}
+                        required
                     />
                 </label>
                 <label>
@@ -129,6 +130,7 @@ function Form(props) {
                         name="email"
                         onChange={handleChange}
                         value={form.email}
+                        required
                     />
                 </label>
                 <label>
@@ -137,11 +139,12 @@ function Form(props) {
                         name="role"
                         onChange={handleChange}
                         value={form.role}
+                        required
                     >
-                        <option>Select a role</option>
-                        <option>Software Engineer</option>
-                        <option>Backend Engineer</option>
-                        <option>Frontend Engineer</option>
+                        <option value="Select a role">Select a role</option>
+                        <option value="Software Engineer">Software Engineer</option>
+                        <option value="Backend Engineer">Backend Engineer</option>
+                        <option >Frontend Engineer</option>
                         <option>Designer</option>
                     </select>
                 </label>
