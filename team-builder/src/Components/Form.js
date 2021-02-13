@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from '../axios';
 
 const FormWrapper = styled.div`
     width: 100%;
@@ -66,8 +67,26 @@ const FormWrapper = styled.div`
     }
 `;
 
+const initialForm = {
+    id: "",
+    name: "",
+    email: "",
+    role: ""
+}
+
 function Form(props) {
-    const { form, update, submit } = props;
+    const { teamMembers, setTeamMembers } = props;
+    const [form, setForm] = useState(initialForm);
+
+    const update = (name, value) => {
+        setForm({...form, [name]: value});
+    }
+
+    const submit = () => {
+        axios.post('mydata.com', form)
+        .then(response => setTeamMembers([...teamMembers, response.data]));
+        setForm(initialForm);
+    }
 
     const handleChange = (event) => {
         const {name, value} = event.target;

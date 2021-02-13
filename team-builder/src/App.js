@@ -14,35 +14,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const initialForm = {
-  id: "",
-  name: "",
-  email: "",
-  role: ""
-}
-
 function App() {
   const [teamMembers, setTeamMembers] = useState([]);
-  const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
     axios.get('mydata.com')
     .then(response => setTeamMembers(response.data));
   }, []);
 
-  const update = (name, value) => {
-    setForm({...form, [name]: value});
-  }
-
-  const submit = () => {
-    axios.post('mydata.com', form)
-    .then(response => setTeamMembers([...teamMembers, response.data]));
-    setForm(initialForm);
-  }
-
   return (
     <Wrapper>
-      <LeftPane form={form} update={update} submit={submit} />
+      <LeftPane teamMembers={teamMembers} setTeamMembers={setTeamMembers} />
       <RightPane teamMembers={teamMembers} />
     </Wrapper>
   );
